@@ -1,0 +1,121 @@
+[Get account user] {{host}}/user/getUser
+[Update account profile] https://api.wiseapp.live/teacher/editProfile
+[Get All Institutes] {{host}}/teacher/institutes
+[Update Institute] {{host}}/institutes/{{institute_id}}
+[Create user] {{host}}/vendors/institutes/{{institute_id}}/users
+[Get User using Email/Phone] {{host}}/vendors/userByIdentifier?provider=EMAIL&identifier=user@wise.live
+[Bulk add learners to a course] {{host}}/institutes/{{institute_id}}/sendBulkInvite
+[Remove user from institute] {{host}}/institutes/{{institute_id}}/removeParticipant
+[Add new identity for a student] {{host}}/institutes/{{institute_id}}/participants/{{student_id}}/addNewIdentity
+[Remove identity for a student] {{host}}/institutes/{{institute_id}}/participants/{{student_id}}/removeIdentity
+[Add a course] {{host}}/teacher/addClass
+[Add a 1:1 course] {{host}}/teacher/addClass
+[Get a course] {{host}}/user/v2/classes/{{class_id}}?full=true
+[Get all courses] {{host}}/institutes/{{institute_id}}/classes?classType=LIVE&showCoTeachers=true
+[Edit a course] {{host}}/teacher/editClass
+[Assign course to student] {{host}}/institutes/{{institute_id}}/assignClassToStudent
+[Remove a student from a course] {{host}}/institutes/{{institute_id}}/assignClassToStudent
+[Assign course to teacher] {{host}}/institutes/{{institute_id}}/assignClassToTeacher
+[Remove a teacher from a course] {{host}}/institutes/{{institute_id}}/assignClassToTeacher
+[Add student using Email/Phone in a course] {{host}}/institutes/{{institute_id}}/sendBulkInvite
+[Archive Course] {{host}}/teacher/classes/{{class_id}}/hiddenStatus
+[Delete a course (Deprecated - Use Archive Course API)] {{host}}/teacher/archiveClass/{{class_id}}
+[Create a teacher] {{host}}/vendors/institutes/{{institute_id}}/users
+[Add Teacher using Email/Phone] {{host}}/institutes/{{institute_id}}/sendBulkInvite
+[Get all teachers] {{host}}/institutes/{{institute_id}}/teachers
+[Update working hours of a teacher] {{host}}/institutes/{{institute_id}}/teachers/{{teacher_id}}/workingHours
+[Get availability of a teacher] {{host}}/institutes/{{institute_id}}/teachers/{{teacher_id}}/availability?startTime=2024-06-27T18:30:00.000Z&endTime=2024-07-01T18:29:59.999Z
+[Add tags to a teacher] {{host}}/institutes/{{institute_id}}/participants/{{teacher_id}}
+[Create a student] {{host}}/vendors/institutes/{{institute_id}}/users
+[Add tags to a student] {{host}}/institutes/{{institute_id}}/participants/{{student_id}}
+[Get all students] {{host}}/institutes/v3/{{institute_id}}s/students?status=ACCEPTED&page_size=50&page_number=1&showParents=true&showFeedbackData=true
+[Get all students in a Course] {{host}}/user/classes/{{class_id}}/participants?showCoTeachers=true
+[Get single student data] {{host}}/public/institutes/{{institute_id}}/studentReports/{{student_id}}
+[Suspend student in a course] {{host}}/teacher/classes/{{class_id}}/suspendStudent
+[Update Student Registration Fields] {{host}}/institutes/{{institute_id}}/students/{{student_id}}/registration
+[Update Student Admin Note] {{host}}/institutes/{{institute_id}}/participants//{{student_id}}
+[Get Student Registration Data] {{host}}/public/institutes/{{institute_id}}/studentReports/{{student_id}}
+[Get all Parents] {{host}}/institutes/{{institute_id}}/parents
+[Search Students and/or Parents (use SearchTerm param in Query)] {{host}}/institutes/v3/{{institute_id}}s/students?status=ACCEPTED&page_size=50&page_number=1&showParents=true&showFeedbackData=true&showContractStatus=true&searchTerm={{search_term}}
+[Add New Parent to existing Student] {{host}}/institutes/{{institute_id}}/parents
+[Add existing Parent to existing Student Copy] {{host}}/institutes/{{institute_id}}/parents
+[Make a user an admin] {{host}}/institutes/{{institute_id}}/makeAdmin
+[Remove user as admin] {{host}}/institutes/{{institute_id}}/removeAsAdmin
+[Get all sessions in a course by date] {{host}}/institutes/{{institute_id}}/sessions?paginateBy=DATE&startDate=2024-06-27T18:30:00.000Z&endDate=2024-07-26T18:29:59.999Z&classId={{class_id}}
+[Get past sessions in a course] https://api.wiseapp.live/institutes/{{institute_id}}/sessions?showUnsharedRecording=true&showFeedbackData=true&page_number=1&page_size=25&paginateBy=COUNT&status=PAST&classId={{class_id}}
+[Get future sessions in a course] https://api.wiseapp.live/institutes/{{institute_id}}/sessions?showUnsharedRecording=true&showFeedbackData=true&page_number=1&page_size=25&paginateBy=COUNT&status=FUTURE&classId={{class_id}}
+[Get single session details (with just sessionId)] {{host}}/user/session/{{session_id}}?showLiveClassInsight=true&showFeedbackConfig=true&showFeedbackSubmission=true&showSessionFiles=true&showAgendaStructure=true
+[Get single session details (with both sessionId and classId)] {{host}}/user/class/{{class_id}}session/{{session_id}}?showLiveClassInsight=true&showFeedbackConfig=true&showFeedbackSubmission=true&showSessionFiles=true&showAgendaStructure=true
+[Get raw attendance in a course] {{host}}/user/classes/{{class_id}}/sessions/{{zoom_session_id}}/rawAttendance
+[Get all past sessions in institute] https://api.wiseapp.live/institutes/{{institute_id}}/sessions?paginateBy=COUNT&page_number=1&page_size=1&status=PAST
+[Get all future sessions in institute] https://api.wiseapp.live/institutes/{{institute_id}}/sessions?paginateBy=COUNT&page_number=1&page_size=1&status=FUTURE
+[Get lens insights for a course] {{host}}/lens/insights?classId={{class_id}}
+[Start a Live Session] {{host}}/teacher/v2/goLive
+[Start a session using your UUID] {{host}}/teacher/v2/goLive
+[Start a Zoom Registered Session] {{host}}/teacher/v2/goLive
+[Start a Lens Session (using External User ID)] {{host}}/teacher/v2/goLive
+[Start a Lens Session (using Internal User ID)] {{host}}/teacher/v2/goLive
+[Start Lens with your Zoom links] {{host}}/teacher/v2/goLive
+[Schedule a live session] {{host}}/teacher/classes/{{class_id}}/sessions
+[Update a scheduled session] {{host}}/teacher/classes/{{class_id}}/sessions/{{session_id}}?updateType=SINGLE
+[Check session conflicts] {{host}}/institutes/{{institute_id}}/checkSessionsAvailability
+[Join Session with Registration] {{host}}/joinAnonymous?token={{token_id}}&firstName=Abhi&lastName=Jeet%20Mishra&userEmail=ab%40wiseapp.live
+[Delete a session] {{host}}/teacher/classes/{{class_id}}/sessions/{{session_id}}?updateType=SINGLE
+[Add Feedback for Completed Session] {{host}}/teacher/classes/{{class_id}}/session/{{session_id}}/feedback
+[End a Running Session] {{host}}/teacher/classes/{{class_id}}/sessions/{{session_id}}/end
+[Cancel a Session] {{host}}/teacher/classes/{{class_id}}/sessions/{{session_id}}?cancelSession=true
+[Add a lead] {{host}}/teacher/classes/{{class_id}}/leads
+[Get Course Content] {{host}}/user/classes/{{class_id}}/contentTimeline?showSequentialLearningDisabledSections=true
+[Import Template in Course Content] {{host}}/teacher/classes/{{class_id}}/importTemplate
+[Get Content & Sections] {{host}}/user/classes/{{class_id}}/contentTimeline?showSequentialLearningDisabledSections=true
+[Create a Test in Course Content] {{host}}/teacher/classes/{{class_id}}/proxy/addTest
+[Add Questions] {{exam_host}}/api/v1/teacher/tests/{{test_id}}/questions
+[Update Settings] {{exam_host}}/api/v2/teacher/tests/{{test_id}}
+[Publish Test] {{exam_host}}/api/v1/teacher/tests/{{test_id}}/activate
+[Get Test Submissions] {{exam_host}}/api/v1/teacher/tests/{{test_id}}/submissions?class_id={{class_id}}&user_id={{user_id}}&current_role=teacher
+[Get all assessments] {{host}}/user/getAssignments
+[Get a single assessment] {{host}}/user/getAssessment/{{assignment_id}}
+[Create Assessments in a Content Section] {{host}}/teacher/createAssignments
+[Evaluate Student Assessment Submission] {{host}}/teacher/giveMarksToAssignment
+[Get Content in Course] {{host}}/user/classes/{{class_id}}/contentTimeline?showSequentialLearningDisabledSections=true
+[Add a Section in Course Content] {{host}}/teacher/classes/{{class_id}}/sections
+[Add Embedded Links in Content Section] {{host}}/teacher/createResourceInBulk
+[Create a discussion] {{host}}/user/createAnnouncements
+[Update a discussion] {{host}}/user/editAnnouncements
+[Get all discussions] {{host}}/user/getAnnouncements
+[Get a single discussion] {{host}}/user/getAnnouncement/{{announcement_id}}
+[Delete a discussion] {{host}}/user/removeAnnouncement
+[Get past live sessions] {{host}}/api/v1/analytics/sessions/past?institute_id={{institute_id}}&start_time=2022-06-19T00%3A00%3A00.000Z&end_time=2022-06-22T23%3A59%3A59.000Z
+[Create a new Agenda with Multi Question Quiz] https://api.wiseapp.live/institutes/{{institute_id}}/agendas
+[Assign Agenda To Room/Course] https://api.wiseapp.live/institutes/{{institute_id}}/agendas/{{agenda_id}}/assignAgendaToClassroom
+[Update an Agenda] https://api.wiseapp.live/institutes/{{institute_id}}/agendas/{{agenda_id}}
+[Delete and Agenda] https://api.wiseapp.live/institutes/{{institute_id}}/agendas/{{agenda_id}}
+[Start a Lens Session] {{host}}/teacher/v2/goLive
+[Update Settings of a Lens Room] https://api.wiseapp.live/lens/classes/{{class_id}}/settings
+[Get Settings of a Lens Room] https://api.wiseapp.live/lens/classes/666b51f4733ac21926f79e82/settings
+[Start Lens with your Zoom links] {{host}}/teacher/v2/goLive
+[Get a single live session attendance/insights] {{host}}/user/classes/{{class_id}}/sessions/{{session_id}}?showLiveClassInsight=true&showFeedbackConfig=true&showFeedbackSubmission=true
+[Get Fees for a course] {{host}}/institutes/classes/{{class_id}}/fees
+[Get Institute Transactions] {{host}}/institutes/{{institute_id}}/fees/transactions?type=PAYMENT,OFFLINE_PAYMENT,DISBURSAL&status=CHARGED,REJECTED&populateParticipant=true&populateClassroom=true&page_size=50&page_number=1&startDate=2025-06-30&endDate=2025-07-31
+[Add or Update Course Fees - Add Instalments by days] {{host}}/institutes/classes/{{class_id}}/fees
+[Add or Update Course Fees - Add Instalments by date] {{host}}/institutes/classes/{{class_id}}/fees
+[Delete Course Fees] {{host}}/institutes/classes/{{class_id}}/fees
+[Get All Student Fees Summary] https://api.wiseapp.live/institutes/{{institute_id}}/studentFees?studentId={{student_id}}&page_size=100
+[Get Single Student Fees] {{host}}/institutes/{{institute_id}}/classes/{{class_id}}/students/{{student_id}}/fees?showTransactions=true
+[Add or Update Student Fees] {{host}}/institutes/{{institute_id}}/classes/{{class_id}}/addOrUpdateStudentFees
+[Add offline transaction for student] {{host}}/teacher/classes/{{class_id}}/transactions
+[Add Single Invoice for Student] {{host}}/teacher/classes/{{class_id}}/invoices
+[Admin Only Chat with Student] {{host}}/institutes/{{institute_id}}/chats
+[Course Chat with Student (Teacher added as Chat Participant)] {{host}}/institutes/{{institute_id}}/chats
+[Get All Chats] {{host}}/institutes/{{institute_id}}/chats?page_number=1&page_size=20&chatSection=all_chats
+[Get Chat by Chat ID] {{host}}/institutes/{{institute_id}}/chats/{{chatId}}?page_number=1&page_size=100
+[Send a Message] {{host}}/institutes/{{institute_id}}/chats/{{chatId}}/messages
+[Book a Consultation for a Student] {{host}}/public/demoRooms/{{consultation_room_id}}/session
+[Get all upcoming consultation sessions] {{host}}/institutes/66793e38fa9c2a40d81d259a/demoRooms/sessions?status=FUTURE&page_number=1&page_size=50&populateSessionAttendees=true
+[Get all past consultation sessions] {{host}}/institutes/66793e38fa9c2a40d81d259a/demoRooms/sessions?status=PAST&page_number=1&page_size=50&populateSessionAttendees=true
+[Get single consultation session details] {{host}}/user/session/{{session_id}}?showFeedbackConfig=true&showFeedbackSubmission=true&showSessionFiles=true&showSessionAttendees=true&showRegistrationFormSubmission=true
+[Get Student Credits (at course level)] {{host}}/institutes/{{institute_id}}/classes/{{class_id}}/students/{{student_id}}/sessionCredits?fetchHistory=true
+[Adding Credits to Student] {{host}}/institutes/{{institute_id}}/classes/{{class_id}}/students/{{student_id}}/sessionCredits
+[Marking Credits as Consumed for Student] {{host}}/institutes/{{institute_id}}/classes/{{class_id}}/students/{{student_id}}/sessionCredits
+[Student Reports] https://api.wiseapp.live/public/institutes/{{institute_id}}/studentReports/{{student_id}}
+[Student Registration Data] https://api.wiseapp.live/institutes/{{institute_id}}/participants/{{student_id}}?showRegistrationData=true
