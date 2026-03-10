@@ -34,4 +34,3 @@ If you have an Apple Silicon Mac, you can install Node via Homebrew `brew instal
    npm run prod
    ```
    *The platform relies completely on LocalStorage for persistence, keeping it extremely portable and functional without complex DB setup required.*
-# Dashboard-skillcase
