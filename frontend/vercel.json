@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/wise-api/:path*",
+      "destination": "https://api.wiseapp.live/:path*"
+    },
+    {
+      "source": "/wise-files/:path*",
+      "destination": "https://files.wiseapp.live/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
