@@ -56,6 +56,11 @@ function App() {
     const [book2CoveredPagesText, setBook2CoveredPagesText] = useState('');
     const [isScanningBookPdf, setIsScanningBookPdf] = useState(false);
     const [paymentsUnlocked, setPaymentsUnlocked] = useState(false);
+    
+    // Global App Security
+    const [appUnlocked, setAppUnlocked] = useState(
+        localStorage.getItem('health_analyzer_unlocked') === 'true'
+    );
 
     const [selectedLanguage, setSelectedLanguage] = useState('German');
     const [selectedLevel, setSelectedLevel] = useState('A1');
@@ -1976,6 +1981,40 @@ function App() {
         setFixedStudentsText(students.join(', '));
         setView('dashboard');
     };
+
+    if (!appUnlocked) {
+        return (
+            <div className="app-container" style={{ alignItems: 'center', justifyContent: 'center', height: '100vh', background: 'var(--bg)' }}>
+                <div className="card animate-fade-in" style={{ maxWidth: '400px', width: '100%', textAlign: 'center', padding: '3rem' }}>
+                    <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔐</div>
+                    <h2 style={{ margin: '0 0 0.5rem 0', color: 'var(--primary)' }}>Protected Dashboard</h2>
+                    <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', fontSize: '0.9rem' }}>Please enter the master password to access.</p>
+                    <form onSubmit={(e) => {
+                        e.preventDefault();
+                        const val = (e.currentTarget.elements.namedItem('pwd') as HTMLInputElement).value;
+                        if (val === 'skillcase2024') { 
+                            localStorage.setItem('health_analyzer_unlocked', 'true');
+                            setAppUnlocked(true);
+                        } else {
+                            alert('Incorrect Password');
+                            (e.currentTarget.elements.namedItem('pwd') as HTMLInputElement).value = '';
+                        }
+                    }}>
+                        <input
+                            type="password"
+                            name="pwd"
+                            placeholder="Enter Password"
+                            required
+                            autoFocus
+                            className="form-control"
+                            style={{ textAlign: 'center', fontSize: '1.2rem', letterSpacing: '0.2rem', marginBottom: '1rem', padding: '1rem' }}
+                        />
+                        <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '0.75rem' }}>Login to Dashboard</button>
+                    </form>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="app-container" style={{ flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
