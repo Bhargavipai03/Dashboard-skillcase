@@ -57,10 +57,8 @@ function App() {
     const [isScanningBookPdf, setIsScanningBookPdf] = useState(false);
     const [paymentsUnlocked, setPaymentsUnlocked] = useState(false);
     
-    // Global App Security
-    const [appUnlocked, setAppUnlocked] = useState(
-        localStorage.getItem('health_analyzer_unlocked') === 'true'
-    );
+    // Global App Security (ask every time)
+    const [appUnlocked, setAppUnlocked] = useState(false);
 
     const [selectedLanguage, setSelectedLanguage] = useState('German');
     const [selectedLevel, setSelectedLevel] = useState('A1');
@@ -1993,7 +1991,6 @@ function App() {
                         e.preventDefault();
                         const val = (e.currentTarget.elements.namedItem('pwd') as HTMLInputElement).value;
                         if (val === 'skillcase2024') { 
-                            localStorage.setItem('health_analyzer_unlocked', 'true');
                             setAppUnlocked(true);
                         } else {
                             alert('Incorrect Password');
